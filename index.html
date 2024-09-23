@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html> 
+<head>    
+    <!-- Link to the stylesheet which contains rules about how each element on the page should be styled -->
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>My Portfolio</title> <!-- The title displayed in the browser tab, not on the page itself -->
+
+    <!-- This is a link to the vega-lite which we're using to make graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <style>
+        #chartGrid {
+            display: flex;
+        }
+        body {
+            font-size: 1.2em; /* Increase font size for all body elements */
+        }
+    </style>
+</head>
+
+<body> 
+    <h1 class="big" style="margin-bottom: 0px; font-size: 2em;"> <!-- Increased font size of the header -->
+        <!-- This is a header, it is the largest text on the page -->
+        Congyi Liu
+    </h1>
+    <p style="margin-top: 0px; color: darkblue; font-size: 1.2em;">
+        <!-- Setting the margin to 0px so the header and author name are close together -->
+        Portfolio | <a href="#">LinkedIn</a> | <a href="https://github.com/Congyi-Liu">GitHub</a>
+    </p>
+    <h3 class="small" style="font-size: 1.5em;"> <!-- Increased font size of the subheading -->
+        This page acts as a portfolio of charts. It can serve as a starting point to display your work. Customize it or start from scratch to make it your own.  
+    </h3>
+
+    <!-- First Chart Section -->
+    <section>
+        <div class="chart-description">
+            <h2 style="font-size: 1.8em;">Section 1: A Basic Chart</h2> <!-- Increased font size of the section header -->
+            <p style="font-size: 1.2em;"> <!-- Increased font size of the paragraph text -->
+                This section contains a basic chart. You can describe the chart and give some context here. This is just a placeholder to demonstrate how sections are structured.
+            </p>
+        </div>
+        <figure id="Location1"></figure> <!-- ID for the Vega-lite chart -->
+    </section>
+
+    <!-- Second Chart Section -->
+    <section>
+        <div class="chart-description">
+            <h2 style="font-size: 1.8em;">Section 2: Real GDP Per Capita</h2> <!-- New section for the second chart -->
+            <p style="font-size: 1.2em;">
+                This section contains a chart showing real GDP per capita across six countries. Data is sourced from the World Bank.
+            </p>
+        </div>
+        <figure id="Location2"></figure> <!-- ID for the second chart -->
+    </section>
+
+    <!-- JavaScript to embed charts using VegaEmbed -->
+    <script>
+        // First chart
+        let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; // URL of the first chart spec
+        vegaEmbed('#Location1', figure_1_spec); // Embeds the first chart
+
+        // Second chart
+        let figure_2_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart1.json"; // Local file for the second chart spec
+        vegaEmbed('#Location2', figure_2_spec); // Embeds the second chart
+    </script>
+
+</body>
+    
+</html>
