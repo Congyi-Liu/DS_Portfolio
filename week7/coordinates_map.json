@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Map with points plotted to show key locations in Kinshasa.",
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/datasets/geo-boundaries-world-110m/master/countries/COG.geojson",
+        "format": {"type": "geojson"}
+      },
+      "mark": "geoshape",
+      "encoding": {
+        "tooltip": {"field": "properties.name", "type": "nominal"}
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/your-repo/coordinates.csv"
+      },
+      "mark": "circle",
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "size": {"value": 100},
+        "color": {"value": "red"}
+      }
+    }
+  ],
+  "projection": {
+    "type": "mercator"
+  }
+}

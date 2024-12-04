@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "S&P 500 Index YTD performance chart for 2024.",
+  "data": {
+    "url": "sp500_2024_ytd.csv",
+    "format": {"type": "csv"}
+  },
+  "width": 600,
+  "height": 300,
+  "mark": "line",
+  "encoding": {
+    "x": {
+      "field": "Date",
+      "type": "temporal",
+      "title": "Date",
+      "axis": {"format": "%b %d", "grid": false}
+    },
+    "y": {
+      "field": "Close",
+      "type": "quantitative",
+      "title": "Closing Price (USD)",
+      "axis": {"grid": true}
+    },
+    "color": {"value": "#007b82"}
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "color": "#007b82",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#999",
+        "strokeDash": [4, 2]
+      },
+      "encoding": {
+        "y": {
+          "aggregate": "max",
+          "field": "Close"
+        },
+        "tooltip": [
+          {"field": "Close", "type": "quantitative", "title": "Price"},
+          {"field": "Date", "type": "temporal"}
+        ]
+      }
+    }
+  ],
+  "config": {
+    "axis": {"labelFontSize": 12, "titleFontSize": 14}
+  }
+}

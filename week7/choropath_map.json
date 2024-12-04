@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Choropleth map showing population density in Kinshasa.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/datasets/geo-boundaries-world-110m/master/countries/COG.geojson",
+    "format": {
+      "type": "geojson"
+    }
+  },
+  "transform": [
+    {
+      "lookup": "properties.name",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/your-repo/population_data.csv"
+        },
+        "key": "region_name",
+        "fields": ["population_density"]
+      }
+    }
+  ],
+  "mark": "geoshape",
+  "encoding": {
+    "color": {
+      "field": "population_density",
+      "type": "quantitative",
+      "scale": {"scheme": "blues"}
+    },
+    "tooltip": [
+      {"field": "properties.name", "type": "nominal"},
+      {"field": "population_density", "type": "quantitative"}
+    ]
+  },
+  "projection": {
+    "type": "mercator"
+  }
+}
