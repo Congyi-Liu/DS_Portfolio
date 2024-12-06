@@ -64,7 +64,7 @@
       "field": "region",
       "type": "nominal",
       "axis": {
-        "labelAngle": 45,
+        "labelAngle": -45,
         "labelAlign": "right"
       }
     },
