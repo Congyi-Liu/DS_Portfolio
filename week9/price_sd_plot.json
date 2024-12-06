@@ -1,12 +1,62 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 400,
-  "height": 600,
+  "width": 600,
+  "height": 400,
   "data": {
-    "url": "week9/db_region.csv",
-    "format": {
-      "type": "csv"
-    }
+    "values": [
+      {
+        "region": "Catalogue",
+        "p_sd": 80.908554
+      },
+      {
+        "region": "London",
+        "p_sd": 246.0103
+      },
+      {
+        "region": "South East",
+        "p_sd": 220.2513
+      },
+      {
+        "region": "South West",
+        "p_sd": 201.63634
+      },
+      {
+        "region": "East Anglia",
+        "p_sd": 197.14328
+      },
+      {
+        "region": "East Midlands",
+        "p_sd": 194.92981
+      },
+      {
+        "region": "West Midlands",
+        "p_sd": 172.72543
+      },
+      {
+        "region": "Yorkshire & Humber",
+        "p_sd": 183.48245
+      },
+      {
+        "region": "North West",
+        "p_sd": 174.61035
+      },
+      {
+        "region": "North",
+        "p_sd": 166.73836
+      },
+      {
+        "region": "Wales",
+        "p_sd": 147.97058
+      },
+      {
+        "region": "Scotland",
+        "p_sd": 168.26251
+      },
+      {
+        "region": "Northern Ireland",
+        "p_sd": 163.04796
+      }
+    ]
   },
   "mark": "bar",
   "encoding": {
