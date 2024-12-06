@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 600,
+  "data": {
+    "url": "db_item_clean.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "transform": [
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "n_obs",
+          "order": "descending"
+        }
+      ]
+    },
+    {
+      "filter": "datum.rank <= 5"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "description",
+      "type": "nominal",
+      "axis": {
+        "labelAngle": 45,
+        "labelAlign": "right"
+      }
+    },
+    "y": {
+      "field": "n_obs",
+      "type": "quantitative",
+      "title": "Number of Observations"
+    },
+    "color": {
+      "value": "#87ceeb"
+    }
+  },
+  "title": "Top 5 Items by Number of Observations"
+}

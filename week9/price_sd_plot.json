@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 600,
+  "data": {
+    "url": "db_region.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "region",
+      "type": "nominal",
+      "axis": {
+        "labelAngle": 45,
+        "labelAlign": "right"
+      }
+    },
+    "y": {
+      "field": "p_sd",
+      "type": "quantitative",
+      "title": "Price Standard Deviation (\u00a3)"
+    },
+    "color": {
+      "value": "#ffa500"
+    }
+  },
+  "title": "Standard Deviation of Prices by Region"
+}
