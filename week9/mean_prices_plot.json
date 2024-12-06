@@ -3,10 +3,60 @@
   "width": 400,
   "height": 600,
   "data": {
-    "url": "db_region.csv",
-    "format": {
-      "type": "csv"
-    }
+    "values": [
+      {
+        "region": "Catalogue",
+        "p_mean": 41.329037
+      },
+      {
+        "region": "London",
+        "p_mean": 56.248341
+      },
+      {
+        "region": "South East",
+        "p_mean": 54.609386
+      },
+      {
+        "region": "South West",
+        "p_mean": 50.904106
+      },
+      {
+        "region": "East Anglia",
+        "p_mean": 51.067471
+      },
+      {
+        "region": "East Midlands",
+        "p_mean": 46.733604
+      },
+      {
+        "region": "West Midlands",
+        "p_mean": 43.581417
+      },
+      {
+        "region": "Yorkshire & Humber",
+        "p_mean": 45.889851
+      },
+      {
+        "region": "North West",
+        "p_mean": 42.2747
+      },
+      {
+        "region": "North",
+        "p_mean": 40.915108
+      },
+      {
+        "region": "Wales",
+        "p_mean": 38.699127
+      },
+      {
+        "region": "Scotland",
+        "p_mean": 42.445091
+      },
+      {
+        "region": "Northern Ireland",
+        "p_mean": 44.438995
+      }
+    ]
   },
   "mark": "bar",
   "encoding": {
