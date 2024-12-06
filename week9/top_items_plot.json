@@ -1,32 +1,31 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 400,
-  "height": 600,
+  "width": 600,
+  "height": 400,
   "data": {
-    "url": "db_item_clean.csv",
-    "format": {
-      "type": "csv"
-    }
+    "values": [
+      {
+        "description": "LIQUEUR PER NIP   SPECIFY ML",
+        "n_obs": 306048
+      },
+      {
+        "description": "BOTTLE OF MIXER 125-200ML",
+        "n_obs": 296328
+      },
+      {
+        "description": "VODKA (PER NIP) SPECIFY ML",
+        "n_obs": 227266
+      },
+      {
+        "description": "WHISKY (PER NIP) SPECIFY ML",
+        "n_obs": 226642
+      },
+      {
+        "description": "DRAUGHT BITTER (PER PINT)",
+        "n_obs": 218416
+      }
+    ]
   },
-  "transform": [
-    {
-      "window": [
-        {
-          "op": "rank",
-          "as": "rank"
-        }
-      ],
-      "sort": [
-        {
-          "field": "n_obs",
-          "order": "descending"
-        }
-      ]
-    },
-    {
-      "filter": "datum.rank <= 5"
-    }
-  ],
   "mark": "bar",
   "encoding": {
     "x": {
