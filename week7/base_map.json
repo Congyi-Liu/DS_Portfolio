@@ -15,7 +15,7 @@
   "mark": {
     "type": "geoshape",
     "stroke": "black",
-    "fill": "#00a651"  // Green color for the map
+    "fill": "#00a651" 
   },
   "encoding": {
     "tooltip": {
