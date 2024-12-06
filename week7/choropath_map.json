@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 400,
-  "height": 240,
+  "width": 600,
+  "height": 400,
   "data": {
     "url": "https://vega.github.io/vega-datasets/data/us-10m.json",
     "format": {
@@ -22,7 +22,8 @@
     }
   ],
   "projection": {
-    "type": "albersUsa"
+    "type": "albersUsa",
+    "scale": 1000
   },
   "mark": {
     "type": "geoshape",
@@ -46,5 +47,13 @@
         "title": "Unemployment Rate"
       }
     ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "events": {
+      "zoom": true
+    }
   }
 }
