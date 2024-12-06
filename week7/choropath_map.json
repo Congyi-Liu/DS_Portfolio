@@ -1,37 +1,50 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Choropleth map showing population density in Kinshasa.",
+  "width": 600,
+  "height": 400,
   "data": {
-    "url": "https://raw.githubusercontent.com/datasets/geo-boundaries-world-110m/master/countries/COG.geojson",
+    "url": "https://vega.github.io/vega-datasets/data/us-10m.json",
     "format": {
-      "type": "geojson"
+      "type": "topojson",
+      "feature": "counties"
     }
   },
   "transform": [
     {
-      "lookup": "properties.name",
+      "lookup": "id",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/your-repo/population_data.csv"
+          "url": "https://vega.github.io/vega-datasets/data/unemployment.tsv"
         },
-        "key": "region_name",
-        "fields": ["population_density"]
+        "key": "id",
+        "fields": ["rate"]
       }
     }
   ],
-  "mark": "geoshape",
+  "projection": {
+    "type": "albersUsa"
+  },
+  "mark": {
+    "type": "geoshape",
+    "stroke": "black"
+  },
   "encoding": {
     "color": {
-      "field": "population_density",
+      "field": "rate",
       "type": "quantitative",
-      "scale": {"scheme": "blues"}
+      "title": "Unemployment Rate"
     },
     "tooltip": [
-      {"field": "properties.name", "type": "nominal"},
-      {"field": "population_density", "type": "quantitative"}
+      {
+        "field": "properties.name",
+        "type": "nominal",
+        "title": "Place Name"
+      },
+      {
+        "field": "rate",
+        "type": "quantitative",
+        "title": "Unemployment Rate"
+      }
     ]
-  },
-  "projection": {
-    "type": "mercator"
   }
 }
