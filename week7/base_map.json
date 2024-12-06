@@ -1,28 +1,52 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "background": "white",
+  "padding": 5,
   "width": 400,
   "height": 240,
-  "data": {
-    "url": "data/us-10m.json",
-    "format": {
-      "type": "topojson",
-      "feature": "states"
+  "style": "view",
+  "data": [
+    {
+      "name": "source_0",
+      "url": "data/us-10m.json",
+      "format": {"type": "topojson", "feature": "states", "parse": {}},
+      "transform": [
+        {
+          "type": "formula",
+          "expr": "datum[\"properties\"] && datum[\"properties\"][\"name\"]",
+          "as": "properties.name"
+        }
+      ]
     }
-  },
-  "projection": {
-    "type": "albersUsa"
-  },
-  "mark": {
-    "type": "geoshape",
-    "stroke": "white"
-  },
-  "encoding": {
-    "tooltip": [
-      {
-        "field": "properties.name",
-        "type": "nominal",
-        "title": "State"
-      }
-    ]
-  }
+  ],
+  "projections": [
+    {
+      "name": "projection",
+      "size": {"signal": "[width, height]"},
+      "fit": {"signal": "data('source_0')"},
+      "type": "albersUsa"
+    }
+  ],
+  "marks": [
+    {
+      "name": "marks",
+      "type": "shape",
+      "style": ["geoshape"],
+      "from": {"data": "source_0"},
+      "encode": {
+        "update": {
+          "stroke": {"value": "white"},
+          "fill": {"value": "#4c78a8"},
+          "tooltip": {
+            "signal": "{\"State\": isValid(datum[\"properties.name\"]) ? datum[\"properties.name\"] : \"\"+datum[\"properties.name\"]}"
+          },
+          "ariaRoleDescription": {"value": "geoshape"},
+          "description": {
+            "signal": "\"State: \" + (isValid(datum[\"properties.name\"]) ? datum[\"properties.name\"] : \"\"+datum[\"properties.name\"])"
+          }
+        }
+      },
+      "transform": [{"type": "geoshape", "projection": "projection"}]
+    }
+  ]
 }
