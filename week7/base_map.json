@@ -6,22 +6,23 @@
     "url": "https://vega.github.io/vega-datasets/data/us-10m.json",
     "format": {
       "type": "topojson",
-      "feature": "states"
+      "feature": "counties"
     }
   },
   "projection": {
-    "type": "albersUsa"
+    "type": "albersUsa",
+    "scale": 1000
   },
   "mark": {
     "type": "geoshape",
-    "stroke": "black",
-    "fill": "#00a651" 
+    "stroke": "black"
   },
-  "encoding": {
-    "tooltip": {
-      "field": "properties.name",
-      "type": "nominal",
-      "title": "State Name"
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "events": {
+      "zoom": true
     }
   }
 }
