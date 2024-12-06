@@ -1,71 +1,181 @@
 <!DOCTYPE html>
-<html> 
-<head>    
-    <!-- Link to the stylesheet which contains rules about how each element on the page should be styled -->
+<html lang="en">
+<head>
     <link rel="stylesheet" type="text/css" href="index.css">
-    <title>My Portfolio</title> <!-- The title displayed in the browser tab, not on the page itself -->
-
-    <!-- This is a link to the vega-lite which we're using to make graphs -->
+    <title>Congyi Liu's Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-
     <style>
+        body {
+            background-color: #F0F0F0;
+            font-family: 'Lora', serif;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .content-wrapper {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        h1, h2 {
+            font-size: 1.5em;
+            color: #5C4033;
+            text-align: center;
+        }
+        p {
+            font-size: 1rem;
+            color: #5C4033;
+            text-align: center;
+            margin-bottom: 1em;
+        }
+        .chart-description p {
+            font-family: 'Lora', serif;
+        }
         #chartGrid {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
-        body {
-            font-size: 1.2em; /* Increase font size for all body elements */
+        section {
+            margin-bottom: 2.5em;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 100%;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        figure {
+            width: 100%;
+            max-width: 700px;
+            height: 600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
+<body>
+    <div class="content-wrapper">
+        <h1>Volatility Prediction Data Science Project</h1>
+        <p>By Congyi Liu | 6 December 2024</p>
+        <p>This project explores stock volatility from a macroeconomic perspective.</p>
 
-<body> 
-    <h1 class="big" style="margin-bottom: 0px; font-size: 2em;"> <!-- Increased font size of the header -->
-        <!-- This is a header, it is the largest text on the page -->
-        Congyi Liu
-    </h1>
-    <p style="margin-top: 0px; color: darkblue; font-size: 1.2em;">
-        <!-- Setting the margin to 0px so the header and author name are close together -->
-        Portfolio | <a href="#">LinkedIn</a> | <a href="https://github.com/Congyi-Liu">GitHub</a>
-    </p>
-    <h3 class="small" style="font-size: 1.5em;"> <!-- Increased font size of the subheading -->
-        This page acts as a portfolio of charts. It can serve as a starting point to display your work. Customize it or start from scratch to make it your own.  
-    </h3>
+        <section>
+            <div class="chart-description">
+                <h2>Visualisation 1: Machine Learning Performance Comparison</h2>
+                <figure id="Location1"></figure>
+            </div>
+        </section>
+        <section>
+            <div class="chart-description">
+                <h2>Visualisation 2: Machine Learning Performance Comparison</h2>
+                <figure id="Location2"></figure>
+            </div>
+        </section>
+        <section>
+            <div class="chart-description">
+                <h2>Visualisation 3: Machine Learning Performance Comparison</h2>
+                <figure id="Location3"></figure>
+            </div>
+        </section>
+        <section>
+            <div class="chart-description">
+                <h2>Visualisation 4: Machine Learning Performance Comparison</h2>
+                <figure id="Location4"></figure>
+            </div>
+        </section>
+        <section>
+            <div class="chart-description">
+                <h2>Visualisation 5: Machine Learning Performance Comparison</h2>
+                <figure id="Location5"></figure>
+            </div>
+        </section>
+        <section>
+            <div class="chart-description">
+                <h2>Visualisation 6: Machine Learning Performance Comparison</h2>
+                <figure id="Location6"></figure>
+            </div>
+        </section>
+        <section>
+            <div class="chart-description">
+                <h2>Visualisation 7: Machine Learning Performance Comparison</h2>
+                <figure id="Location7"></figure>
+            </div>
+        </section>
+        <section>
+            <div class="chart-description">
+                <h2>Visualisation 8: Machine Learning Performance Comparison</h2>
+                <figure id="Location8"></figure>
+            </div>
+        </section>
+        <section>
+            <div class="chart-description">
+                <h2>Visualisation 9: Machine Learning Performance Comparison</h2>
+                <figure id="Location9"></figure>
+            </div>
+        </section>
+        <section>
+            <div class="chart-description">
+                <h2>Visualisation 10: Machine Learning Performance Comparison</h2>
+                <figure id="Location10"></figure>
+            </div>
+        </section>
+    </div>
 
-    <!-- First Chart Section -->
-    <section>
-        <div class="chart-description">
-            <h2 style="font-size: 1.8em;">Section 1: A Basic Chart</h2> <!-- Increased font size of the section header -->
-            <p style="font-size: 1.2em;"> <!-- Increased font size of the paragraph text -->
-                This section contains a basic chart. You can describe the chart and give some context here. This is just a placeholder to demonstrate how sections are structured.
-            </p>
-        </div>
-        <figure id="Location1"></figure> <!-- ID for the Vega-lite chart -->
-    </section>
+    <footer>
+        <nav class="menu" id="menu">
+            <a href="https://www.linkedin.com/school/university-of-bristol/">LinkedIn</a>
+            <a href="https://github.com/Congyi-Liu">GitHub</a>
+        </nav>
+    </footer>
 
-    <!-- Second Chart Section -->
-    <section>
-        <div class="chart-description">
-            <h2 style="font-size: 1.8em;">Section 2: Real GDP Per Capita</h2> <!-- New section for the second chart -->
-            <p style="font-size: 1.2em;">
-                This section contains a chart showing real GDP per capita across six countries. Data is sourced from the World Bank.
-            </p>
-        </div>
-        <figure id="Location2"></figure> <!-- ID for the second chart -->
-    </section>
-
-    <!-- JavaScript to embed charts using VegaEmbed -->
     <script>
-        // First chart
-        let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; // URL of the first chart spec
-        vegaEmbed('#Location1', figure_1_spec); // Embeds the first chart
+        let double_axis_1 = "plots/model_performance.json";
+        vegaEmbed('#Location1', double_axis_1);
 
-        // Second chart
-        let figure_2_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart1.json"; // Local file for the second chart spec
-        vegaEmbed('#Location2', figure_2_spec); // Embeds the second chart
+        let double_axis_2 = "plots/model_performance.json";
+        vegaEmbed('#Location2', double_axis_2);
+
+        let double_axis_3 = "plots/model_performance.json";
+        vegaEmbed('#Location3', double_axis_3);
+
+        let double_axis_4 = "plots/model_performance.json";
+        vegaEmbed('#Location4', double_axis_4);
+
+        let double_axis_5 = "plots/model_performance.json";
+        vegaEmbed('#Location5', double_axis_5);
+
+        let double_axis_6 = "plots/model_performance.json";
+        vegaEmbed('#Location6', double_axis_6);
+
+        let double_axis_7 = "plots/model_performance.json";
+        vegaEmbed('#Location7', double_axis_7);
+
+        let double_axis_8 = "plots/model_performance.json";
+        vegaEmbed('#Location8', double_axis_8);
+
+        let double_axis_9 = "plots/model_performance.json";
+        vegaEmbed('#Location9', double_axis_9);
+
+        let double_axis_10 = "plots/model_performance.json";
+        vegaEmbed('#Location10', double_axis_10);
     </script>
-
 </body>
-    
 </html>
