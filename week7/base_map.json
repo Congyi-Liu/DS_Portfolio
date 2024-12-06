@@ -1,20 +1,28 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Base map of Kinshasa with tooltips displaying sub-area names.",
+  "width": 500,
+  "height": 300,
   "data": {
-    "url": "https://raw.githubusercontent.com/datasets/geo-boundaries-world-110m/master/countries/COG.geojson",
+    "url": "data/us-10m.json",
     "format": {
-      "type": "geojson"
+      "type": "topojson",
+      "feature": "states"
     }
+  },
+  "projection": {
+    "type": "albersUsa"
   },
   "mark": {
     "type": "geoshape",
-    "tooltip": true
+    "stroke": "white"
   },
   "encoding": {
-    "tooltip": {"field": "properties.name", "type": "nominal"}
-  },
-  "projection": {
-    "type": "mercator"
+    "tooltip": [
+      {
+        "field": "properties.name",
+        "type": "nominal",
+        "title": "State"
+      }
+    ]
   }
 }
