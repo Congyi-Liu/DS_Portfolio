@@ -3,7 +3,7 @@
   "width": 400,
   "height": 600,
   "data": {
-    "url": "db_region.csv",
+    "url": "week9/db_region.csv",
     "format": {
       "type": "csv"
     }
