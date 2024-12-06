@@ -128,13 +128,37 @@
         <section>
             <div class="chart-description">
                 <h2>Week 5: Link to Colab</h2>
-                <a href="week5/model_performance.json" target="_blank">View Code</a>
+                <a href="week5/colab.py" target="_blank">View Code</a>
             </div>
         </section>
         <section>
             <div class="chart-description">
                 <h2>Week 5: Colab Data Source</h2>
                 <a href="week5/gdp_data_tidy.csv" target="_blank">View Data</a>
+            </div>
+        </section>
+                <section>
+            <div class="chart-description">
+                <h2>Week 6: Link to Colab</h2>
+                <a href="week6/colab.py" target="_blank">View Code</a>
+            </div>
+        </section>
+        <section>
+            <div class="chart-description">
+                <h2>Week 7: Plot 1</h2>
+                <figure id="Location8"></figure>
+            </div>
+        </section>
+            <section>
+            <div class="chart-description">
+                <h2>Week 7: Plot 2</h2>
+                <figure id="Location9"></figure>
+            </div>
+        </section>
+            <section>
+            <div class="chart-description">
+                <h2>Week 7: Plot 3</h2>
+                <figure id="Location10"></figure>
             </div>
         </section>
     </div>
@@ -168,12 +192,13 @@
         let double_axis_7 = "week4/SP500_vega_lite.json";
         vegaEmbed('#Location7', double_axis_7);
 
-        
+        let double_axis_8 = "week7/base_map.json";
+        vegaEmbed('#Location9', double_axis_8);
 
-        let double_axis_9 = "plots/model_performance.json";
+        let double_axis_9 = "week7/choropath_mapjson";
         vegaEmbed('#Location9', double_axis_9);
 
-        let double_axis_10 = "plots/model_performance.json";
+        let double_axis_10 = "week7/coordinates_map.json";
         vegaEmbed('#Location10', double_axis_10);
     </script>
 </body>
